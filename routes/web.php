@@ -32,3 +32,14 @@ Route::get('shop/contact', function () {
 Route::get('shop', function () {
     return view('MainViews.shop');
 });
+
+Route::get('Admin/index', function () {
+    return view('Admin.add-product');
+});
+
+Route::get('product/index', 'App\Http\Controllers\productController@index');
+Route::post('product/delete/{id}', 'App\Http\Controllers\productController@destroy');
+Route::post('product/update/{id}', 'App\Http\Controllers\productController@update');
+Route::get('product/edit/{id}', 'App\Http\Controllers\productController@edit');
+Route::post('product/delete/{id}', 'App\Http\Controllers\productController@destroy');
+
